@@ -1,30 +1,26 @@
-using System;
+using Core.Disposables;
 using Core.Events;
 using UnityEngine;
 using VContainer.Unity;
 
-public class TestPopupController : IStartable, IDisposable
+public class TestPopupController : IStartable
 {
     private readonly TestPopupView _view;
     private readonly IEventBus _eventBus;
+    private readonly Disposer _disposer;
 
-    public TestPopupController(TestPopupView view, IEventBus eventBus)
+    public TestPopupController(TestPopupView view, IEventBus eventBus, Disposer disposer)
     {
         _view = view;
         _eventBus = eventBus;
+        _disposer = disposer;
     }
-    
+
     public void Start()
     {
         _view.button.onClick.AddListener(OnTestButtonClick);
-    }
-
-    public void Dispose()
-    {
-        if (_view != null)
-        {
-            _view.button.onClick.RemoveListener(OnTestButtonClick);
-        }
+        new ActionDisposable(() => _view.button.onClick.RemoveListener(OnTestButtonClick))
+            .AddTo(_disposer);
     }
 
     private void OnTestButtonClick()

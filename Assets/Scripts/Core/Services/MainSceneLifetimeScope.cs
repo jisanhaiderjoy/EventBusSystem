@@ -1,3 +1,4 @@
+using Core.Disposables;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -19,6 +20,8 @@ namespace Core.Services
 
         protected override void Configure(IContainerBuilder builder)
         {
+            builder.Register<Disposer>(Lifetime.Scoped);
+
             builder.RegisterEntryPoint<TestPopupController>(Lifetime.Scoped)
                 .WithParameter(_testPopupView);
 
