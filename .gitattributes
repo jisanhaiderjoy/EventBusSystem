@@ -1,0 +1,69 @@
+# Normalize text files to LF in the repository (avoids CRLF commits on macOS/Linux).
+* text=auto
+
+# Source & docs
+*.cs text eol=lf diff=csharp
+*.xml text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.shader text eol=lf
+*.cginc text eol=lf
+*.hlsl text eol=lf
+*.compute text eol=lf
+*.asmdef text eol=lf
+
+# Unity YAML / serialized text
+*.meta text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
+*.asset text eol=lf
+*.anim text eol=lf
+*.controller text eol=lf
+*.overrideController text eol=lf
+*.mask text eol=lf
+*.mat text eol=lf
+*.physicMaterial text eol=lf
+*.physicsMaterial2D text eol=lf
+*.playable text eol=lf
+*.preset text eol=lf
+*.renderTexture text eol=lf
+*.spriteatlas text eol=lf
+*.terrainlayer text eol=lf
+*.mixer text eol=lf
+*.shadervariants text eol=lf
+*.inputactions text eol=lf
+*.uss text eol=lf
+*.uxml text eol=lf
+
+# Binaries (do not convert line endings)
+*.dll binary
+*.exe binary
+*.pdb binary
+*.mdb binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.tif binary
+*.tiff binary
+*.tga binary
+*.bmp binary
+*.exr binary
+*.psd binary
+*.ttf binary
+*.otf binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.aiff binary
+*.aif binary
+*.fbx binary
+*.obj binary
+*.unitypackage binary
+*.aar binary
+*.jar binary
+*.zip binary
+*.so binary
+*.dylib binary
+*.bundle binary
